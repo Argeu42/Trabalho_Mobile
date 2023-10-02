@@ -13,6 +13,8 @@ const navBottom = createBottomTabNavigator();
 import Tela1 from './src/components/Tela1';
 import Tela2 from './src/components/Tela2';
 
+//Teste alteração
+
 export default function App() {
   return (
     <NavigationContainer>
