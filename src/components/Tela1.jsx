@@ -48,7 +48,7 @@ export default function Tela1() {
         <Separator/>
         <Button
           title="Comprar Estrela (10 cliques)"
-          onPress={ var1 > 9 ? () => { setVar1(var1 - 10), setEstrela(estrela + 1), Alert.alert("Sucesso! Você comprou uma estrela!") ; } : setVar1(var1) }
+          onPress={ var1 > 9 ? () => { setVar1(var1 - 10), setEstrela(estrela + 1), Alert.alert("Sucesso!", "Você comprou uma estrela!") ; } : setVar1(var1) }
         />
         
       </View>
