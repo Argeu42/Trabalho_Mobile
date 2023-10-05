@@ -38,6 +38,7 @@ export default function App() {
               },
               tabBarActiveTintColor: 'blue',
               tabBarInactiveTintColor: 'blue',
+              headerTintColor: 'blue',
             }}
           />
           <navBottom.Screen

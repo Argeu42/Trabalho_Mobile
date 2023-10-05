@@ -1,20 +1,11 @@
-import {  View, Text, Button, StyleSheet, SafeAreaView, Image, Alert} from 'react-native';
+import {  View, Text, Button, StyleSheet, SafeAreaView, Image, Alert, TouchableHighlight} from 'react-native';
 import React, {useContext, useState, useEffect} from 'react';
 import {Contexto1} from '../contexts/Contexto';
 
 export default function Tela1() {
   const {var1, setVar1, estrela, setEstrela} = useContext(Contexto1);
-  const [cliqueBotao, setCliqueBotao] = useState(false);
   const Separator = ()=> <View style={styles.separator}/>
   
-
-  function aumentaCliques() {
-    setVar1(var1 + 1);
-  }
-
-  useEffect(() => {
-    aumentaCliques();
-  }, [cliqueBotao]);
 
   const styles = StyleSheet.create({
     container: {
@@ -44,7 +35,7 @@ export default function Tela1() {
       <View >
         <Text style={styles.destaque}>Vezes clicadas: {var1} </Text>
         <Separator/>
-        <Button title="Clicar" onPress={() => setCliqueBotao(!cliqueBotao)} />
+        <Button title="Clicar" onPress={() => setVar1(var1 => var1 + 1)} />
         <Separator/>
         <Button
           title="Comprar Estrela (10 cliques)"
@@ -52,8 +43,7 @@ export default function Tela1() {
         />
         
       </View>
-      <Image style={styles.imagem} source={require('../images/click.png')}/>
-      
+        <Image style={styles.imagem} source={require('../images/click.png')}/>
     </SafeAreaView>
   );
 }

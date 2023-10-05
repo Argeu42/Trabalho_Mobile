@@ -1,10 +1,11 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import React, {useContext, useEffect} from 'react';
 import {Contexto1} from '../contexts/Contexto';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Tela3() {
   const {estrela, var1, cliquesTotais, setCliquesTotais} = useContext(Contexto1);
+  const Separator = ()=> <View style={styles.separator}/>
 
   const styles = StyleSheet.create({
     container: {
@@ -14,7 +15,7 @@ export default function Tela3() {
     },
     destaque: {
       fontSize: 20,
-      textAlign: 'justify',
+      textAlign: 'center',
       color: 'white',
       fontWeight: 'bold',
     },
@@ -22,9 +23,15 @@ export default function Tela3() {
       marginVertical: 8,
     },
     imagem: {
-      width: 350,
+      width: '90%',
       height: 500,
-      resizeMode: 'contain',
+      resizeMode: 'cover',
+      overflow: "hidden",
+      borderWidth: 5,
+      borderRadius: 100,
+      borderColor: 'white',
+      alignSelf: 'center',
+ 
     }
   });
 
@@ -43,9 +50,14 @@ export default function Tela3() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Separator/>        
       <View>
         <Text  style={styles.destaque}>Uau! Você clicou {cliquesTotais} vezes!</Text>
-    </View>
+      </View>
+      <Separator/>
+      <Separator/>
+      <Separator/>
+      <Image style={styles.imagem} source={require('../images/joia.png')}/>
     </SafeAreaView>
     
   );
